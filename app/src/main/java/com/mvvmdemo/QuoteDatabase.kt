@@ -1,4 +1,4 @@
-package com.cheezycode.mvvmdemo
+package com.mvvmdemo
 
 import android.content.Context
 import androidx.room.Database

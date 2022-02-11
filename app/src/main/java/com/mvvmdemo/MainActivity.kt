@@ -1,11 +1,11 @@
-package com.cheezycode.mvvmdemo
+package com.mvvmdemo
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.cheezycode.mvvmdemo.databinding.ActivityMainBinding
+import com.mvvmdemo.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
@@ -21,6 +21,9 @@ class MainActivity : AppCompatActivity() {
             ViewModelProvider(this, MainViewModelFactory(repository)).get(MainViewModel::class.java)
 
         mainViewModel.getQuotes().observe(this, Observer {
+            it.map { quote ->
+                quote.author = quote.author+"\n\n"
+            }
             binding.quotes = it.toString()
         })
 

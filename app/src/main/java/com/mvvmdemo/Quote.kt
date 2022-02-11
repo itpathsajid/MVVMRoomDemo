@@ -1,4 +1,4 @@
-package com.cheezycode.mvvmdemo
+package com.mvvmdemo
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
@@ -7,6 +7,8 @@ import androidx.room.PrimaryKey
 data class Quote(
     @PrimaryKey(autoGenerate = true)
     val id : Int,
-    val text: String,
-    val author: String
+
+    var text: String,
+
+    var author: String
 )

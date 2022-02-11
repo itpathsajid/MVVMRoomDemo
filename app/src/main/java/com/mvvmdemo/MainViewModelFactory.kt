@@ -1,4 +1,4 @@
-package com.cheezycode.mvvmdemo
+package com.mvvmdemo
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
